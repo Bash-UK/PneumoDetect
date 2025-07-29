@@ -1,0 +1,19 @@
+
+
+# Python/Backend
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+backend/*.h5      # Don't commit large model files unless you want to!
+
+# React/Frontend
+node_modules/
+frontend/build/
+frontend/.env
+
+# Mac/Windows
+.DS_Store
+Thumbs.db

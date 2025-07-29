@@ -4,10 +4,23 @@ import numpy as np
 from PIL import Image 
 import io
 import tensorflow as tf 
-
+import os
+import gdown
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # or ["*"] for development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-model = tf.keras.models.load_model("/content/pneumonia_vgg16_model.h5")
+model_path = "pneumonia_vgg16_model.h5"
+if not os.path.exists(model_path):
+    # Update the link with your own Google Drive file ID
+    gdown.download("https://drive.google.com/uc?id=1vc5DPAWGPgEotv32yDFgwANYdVHbQbrv", model_path, quiet=False)
+
+model = tf.keras.models.load_model("pneumonia_vgg16_model.h5")
 
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
