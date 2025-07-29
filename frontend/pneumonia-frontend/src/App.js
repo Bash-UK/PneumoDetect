@@ -71,7 +71,7 @@ export default function App() {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await fetch("https://pneumodetectapp.onrender.com/predict/", {
+      const res = await fetch("https://pneumodetect.onrender.com/predict/", {
         method: "POST",
         body: formData
       });
