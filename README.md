@@ -27,7 +27,8 @@ Users upload X-ray images and get predictions with confidence scores to indicate
 
 ---
 ---
-
+## Live App
+link to PneumoDetect App: https://pneumodetectapp.onrender.com/ 
 ## Model Performance
 
 - **Training Accuracy:** Approximately 94.5%  
